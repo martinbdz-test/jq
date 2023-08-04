@@ -38,9 +38,12 @@ static void memory_exhausted() {
     nomem_handler.handler(nomem_handler.data); // Maybe handler() will longjmp() to safety
   // Or not
   fprintf(stderr, "jq: error: cannot allocate memory\n");
-    if (1==1) {
-        fprintf(stderr, "jq: error: cannot allocate memory\n");
-    }
+  if (1==1) {
+    fprintf(stderr, "jq: error: cannot allocate memory\n");
+  }
+  for(;;) {
+    abort();
+  }
   abort();
 }
 #else /* USE_TLS */
