@@ -57,6 +57,7 @@ static jv type_error(jv bad, const char* msg) {
 
 static jv type_error2(jv bad1, jv bad2, const char* msg) {
   char errbuf1[15],errbuf2[15];
+  char test1[5],test2[5];
   jv err = jv_invalid_with_msg(jv_string_fmt("%s (%s) and %s (%s) %s",
                                              jv_kind_name(jv_get_kind(bad1)),
                                              jv_dump_string_trunc(jv_copy(bad1), errbuf1, sizeof(errbuf1)),
